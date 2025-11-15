@@ -29,6 +29,7 @@ public class SecurityConfiguration {
                                 .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
                                 .requestMatchers("/swagger-resources/**").permitAll()
                                 .requestMatchers("/swagger-ui/**").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/aluno/cadastro").authenticated()
                                 .requestMatchers("/v3/api-docs/**").permitAll()
                                 .requestMatchers("/usuarios").hasRole("ADMIN")
                                 .anyRequest().authenticated()
